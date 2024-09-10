@@ -11,8 +11,10 @@ const Home = () => {
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite,globalStyle.flex]}>
         <Header title={"Azzahri A."} type={1}></Header>
-
         <Button title={'Donate'}></Button>
+        <Button title={'Donate'} isDisabled={false} onPress={()=>{
+            console.log("you press me|||")
+        }} ></Button>
         
     </SafeAreaView>
   )

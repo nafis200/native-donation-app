@@ -10,11 +10,14 @@ const style = StyleSheet.create({
     },
     title:{
       fontSize: scaleFontSize(16),
-      fontWeight:'800',
+      fontWeight:'500',
       lineHeight:scaleFontSize(19),
       textAlign:'center', 
       color:'#FFFFFF'
          
+    },
+    disabled:{
+        opacity:0.5
     }
 })
 
