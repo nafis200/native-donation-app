@@ -12,5 +12,5 @@ const MainNavigation = () => {
     </Stack.Navigator>
   )
 }
-
+// screenOptions = {{header: ()=> null, headeShown: false}}
 export default MainNavigation
