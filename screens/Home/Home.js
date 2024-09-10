@@ -8,6 +8,8 @@ import Tab from '../../components/tab/Tab'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import Badge from '../../components/Badge/Badge'
+import Search from '../../components/search/Search'
+import Button from '../../components/Header/button/Button'
 
 const Home = () => {
   return (
@@ -18,8 +20,12 @@ const Home = () => {
             console.log("you press me|||")
         }} ></Button> */}
        
+        <Search></Search>
+
         <View>
-        <Tab title={"highlights"}></Tab>
+        <Tab title={"highlights"} onPress={()=>{
+           console.log("hellow ")
+        }}></Tab>
         <Tab title={"LifeStyle"} isInactive={true}></Tab>
         {/* <Badge title={"environment"}></Badge> */}
         <Badge title={"Environment"}></Badge>
