@@ -21,6 +21,7 @@ const Home = () => {
        
         <View>
         <Tab title={"highlights"}></Tab>
+        <Tab title={"LifeStyle"} isInactive={true}></Tab>
         </View>
 
     </SafeAreaView>
