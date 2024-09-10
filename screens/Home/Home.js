@@ -8,6 +8,7 @@ import Header from '../../components/Header/Header'
 import Button from '../../components/Header/button/Button'
 import Tab from '../../components/tab/Tab'
 import { horizontalScale } from '../../assets/styles/scalling'
+import Badge from '../../components/Badge/badge'
 
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
         <View>
         <Tab title={"highlights"}></Tab>
         <Tab title={"LifeStyle"} isInactive={true}></Tab>
+        <Badge title={"environment"}></Badge>
         </View>
 
     </SafeAreaView>
