@@ -9,8 +9,10 @@ const SIngleDonationItem = (props) => {
   return (
     <View>
       <View>
-        <Badge title={props.badgeTitle}></Badge>
-        <Image style={[style.image,{height:200, width:200,backgroundColor:'gray'}]} source={{uri: props.uri}} />
+        <View style={style.badge}>
+        <Badge  title={props.badgeTitle}></Badge>
+        </View>
+        <Image style={[style.image,{height:150, width:150,backgroundColor:'gray'}]} source={{uri: props.uri}} />
       </View>
       <Header title={props.donationTitle} type={3}></Header>
       <Header title={'$'+props.price}></Header>

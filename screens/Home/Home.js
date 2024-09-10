@@ -11,6 +11,7 @@ import Badge from '../../components/Badge/Badge'
 import Search from '../../components/search/Search'
 import Button from '../../components/Header/button/Button'
 import SIngleDonationItem from '../../components/singledonetionItem/SIngleDonationItem'
+import { horizontalScale } from '../../assets/styles/scalling'
 
 
 
@@ -32,17 +33,24 @@ const Home = () => {
            console.log("hellow ")
         }}></Tab>
         <Tab title={"LifeStyle"} isInactive={true}></Tab>
-        {/* <Badge title={"environment"}></Badge> */}
-        <Badge title={"Environment"}></Badge>
-        <FontAwesomeIcon style={{color:'black'}} icon={faSearch} />
-
+       
+        <SafeAreaView style={{flexDirection:'row',justifyContent:'space-between',paddingHorizontal:horizontalScale(24)}}>
         <SIngleDonationItem 
         uri = {"https://i.postimg.cc/mkGsv8Hy/1000-F-767620795-dc-VEg9-TKd-QQ3-PO8km54pc-A5-C1pd-K87l-U.jpg"} 
         badgeTitle={"Environment"}
         donationTitle={"tree cactus"}
         price={44}
         />
+        <SIngleDonationItem 
+        uri = {"https://i.postimg.cc/mkGsv8Hy/1000-F-767620795-dc-VEg9-TKd-QQ3-PO8km54pc-A5-C1pd-K87l-U.jpg"} 
+        badgeTitle={"Environment"}
+        donationTitle={"tree cactus"}
+        price={44}
+        />
+        </SafeAreaView>
+
         </View>
+       
 
     </SafeAreaView>
   )
