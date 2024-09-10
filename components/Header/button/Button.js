@@ -6,8 +6,8 @@ import style from './style';
 style
 const Button = (props) => {
   return (
-    <Pressable disabled={props.isDisabled}>
-        <Text style={[{color:'black'},style.button]}>{props.title}</Text>
+    <Pressable disabled={props.isDisabled} style={style.button}>
+        <Text style={style.title}>{props.title}</Text>
     </Pressable>
   )
 }
