@@ -1,21 +1,24 @@
 
 import { StyleSheet} from "react-native";
-import { horizontalScale, verticalScale } from "../../assets/styles/scalling";
+import { horizontalScale, scaleFontSize, verticalScale } from "../../assets/styles/scalling";
 
 const style = StyleSheet.create({
    
     searchInput:{
-        borderWidth: 1,
         flex:1,
         marginLeft: horizontalScale(6),
-        color:'black'
+        color:'black',
+        height:'100%',
+        fontSize: scaleFontSize(14),
+        lineHeight:scaleFontSize(14)
     },
     searchInputContainer:{
         flexDirection: 'row',
         alignItems:'center',
         paddingHorizontal: horizontalScale(16),
         backgroundColor: '#F3F5F9',
-        height: verticalScale(25)
+        height: verticalScale(25),
+        borderRadius:horizontalScale(100),
 
     }
 

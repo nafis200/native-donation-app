@@ -1,14 +1,20 @@
-import { View, Text, TextInput } from 'react-native'
-import React from 'react'
+import { View, Text, TextInput,Pressable } from 'react-native'
+import React, {useRef} from 'react'
 import style from './style'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 const Search = () => {
+    const textRef = useRef(null)
+    const handleFocus = ()=>{
+        textRef.current.focus()
+    }
   return (
-    <View style={style.searchInputContainer}>
+    <Pressable style={style.searchInputContainer} onPress={handleFocus} >
        <FontAwesomeIcon icon={faSearch}/>
-       <TextInput style={style.searchInput} />
-    </View>
+       <TextInput 
+       ref = {textRef}
+       style={style.searchInput} />
+    </Pressable>
   )
 }
 
