@@ -8,7 +8,9 @@ import Header from '../../components/Header/Header'
 const Home = () => {
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite,globalStyle.flex]}>
-        <Header title={"hellow world"}></Header>
+        <Header title={"Azzahri A."} type={1}></Header>
+        <Header title={"Azzahri A."} type={2}></Header>
+        <Header title={"Azzahri A."} type={3}></Header>
     </SafeAreaView>
   )
 }
