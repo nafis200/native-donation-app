@@ -4,12 +4,10 @@ import React from 'react'
 import style from './style'
 import globalStyle from '../../assets/styles/globalStyle'
 import Header from '../../components/Header/Header'
-
-import Button from '../../components/Header/button/Button'
 import Tab from '../../components/tab/Tab'
-import { horizontalScale } from '../../assets/styles/scalling'
-import Badge from '../../components/Badge/badge'
-
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import Badge from '../../components/Badge/Badge'
 
 const Home = () => {
   return (
@@ -23,7 +21,9 @@ const Home = () => {
         <View>
         <Tab title={"highlights"}></Tab>
         <Tab title={"LifeStyle"} isInactive={true}></Tab>
-        <Badge title={"environment"}></Badge>
+        {/* <Badge title={"environment"}></Badge> */}
+        <Badge title={"Environment"}></Badge>
+        <FontAwesomeIcon style={{color:'black'}} icon={faSearch} />
         </View>
 
     </SafeAreaView>
