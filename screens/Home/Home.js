@@ -10,6 +10,9 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import Badge from '../../components/Badge/Badge'
 import Search from '../../components/search/Search'
 import Button from '../../components/Header/button/Button'
+import SIngleDonationItem from '../../components/singledonetionItem/SIngleDonationItem'
+
+
 
 const Home = () => {
   return (
@@ -20,7 +23,9 @@ const Home = () => {
             console.log("you press me|||")
         }} ></Button> */}
        
-        <Search></Search>
+        <Search onSearch={(value)=>{
+               console.log(value)
+        }}></Search>
 
         <View>
         <Tab title={"highlights"} onPress={()=>{
@@ -30,6 +35,13 @@ const Home = () => {
         {/* <Badge title={"environment"}></Badge> */}
         <Badge title={"Environment"}></Badge>
         <FontAwesomeIcon style={{color:'black'}} icon={faSearch} />
+
+        <SIngleDonationItem 
+        uri = {"https://i.postimg.cc/mkGsv8Hy/1000-F-767620795-dc-VEg9-TKd-QQ3-PO8km54pc-A5-C1pd-K87l-U.jpg"} 
+        badgeTitle={"Environment"}
+        donationTitle={"tree cactus"}
+        price={44}
+        />
         </View>
 
     </SafeAreaView>
