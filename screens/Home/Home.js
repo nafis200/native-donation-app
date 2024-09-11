@@ -1,5 +1,5 @@
 
-import { View, Text ,SafeAreaView, Pressable} from 'react-native'
+import { View, Text ,SafeAreaView, Pressable,ScrollView} from 'react-native'
 import React from 'react'
 import style from './style'
 import globalStyle from '../../assets/styles/globalStyle'
@@ -22,12 +22,12 @@ const Home = () => {
   const dispatch = useDispatch()
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite,globalStyle.flex]}>
-        
-        <Header title={user.firstName + ' ' + user.lastName}></Header>
-        
-        <Pressable onPress={()=>dispatch(updateFirstName({firstName: 'nafis'}))}>
-          <Text style={{color:'black'}}>press me to change first name</Text>
-        </Pressable>
+        <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={style.header}>
+            <Text style={[{color:'black'}, style.headerIntroText]}>Hellow, </Text>
+            <Header title={user.firstName + ' ' + user.lastName[0]} />
+        </View>
+        </ScrollView>
 
     </SafeAreaView>
   )
