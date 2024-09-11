@@ -25,7 +25,6 @@ const Home = () => {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   dispatch(resetToInitialState());
-  console.log(user);
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -44,6 +43,12 @@ const Home = () => {
             style={style.profileimage}
           ></Image>
         </View>
+        <View style={style.Searchbox}>
+             <Search/>
+        </View>
+        <Pressable style={style.hightlightedContainer}>
+           <Image style={style.highlighted} source={require('../../assets/image/pexels-oliver-sjöström-1433052.jpg')} />
+        </Pressable>
       </ScrollView>
     </SafeAreaView>
   );

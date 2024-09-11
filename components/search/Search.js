@@ -23,6 +23,7 @@ const Search = (props) => {
        size={scaleFontSize(22)}
        icon={faSearch}/>
        <TextInput 
+       placeholder={props.placeholder}
        ref = {textRef}
        style={style.searchInput}
        value = {search}
@@ -33,11 +34,13 @@ const Search = (props) => {
 }
 
 Search.defaultProps = {
-    onSearch: ()=>{}
+    onSearch: ()=>{},
+    placeholder: "Search"
 }
 
 Search.propTypes = {
     onSearch: PropTypes.func,
+    placeholder: PropTypes.string
 }
 
 export default Search

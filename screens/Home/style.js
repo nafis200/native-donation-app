@@ -24,6 +24,19 @@ const style = StyleSheet.create({
         width: horizontalScale(100),
         height:verticalScale(50),
 
+    },
+    searchBox:{
+        marginHorizontal: horizontalScale(24),
+        marginTop: verticalScale(20)
+    },
+    highlighted:{
+        height:horizontalScale(400),
+        width: '100%',
+        
+    },
+    hightlightedContainer:{
+        marginHorizontal: horizontalScale(24),
+        marginTop:scaleFontSize(20)
     }
 
 })
