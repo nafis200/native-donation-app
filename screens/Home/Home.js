@@ -1,5 +1,5 @@
 
-import { View, Text ,SafeAreaView} from 'react-native'
+import { View, Text ,SafeAreaView, Pressable} from 'react-native'
 import React from 'react'
 import style from './style'
 import globalStyle from '../../assets/styles/globalStyle'
@@ -12,18 +12,22 @@ import Search from '../../components/search/Search'
 import Button from '../../components/Header/button/Button'
 import SIngleDonationItem from '../../components/singledonetionItem/SIngleDonationItem'
 import { horizontalScale } from '../../assets/styles/scalling'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { updateFirstName } from '../../redux/reducer/User'
 
 
 
 const Home = () => {
   const user = useSelector(state => state.user)
-  
+  const dispatch = useDispatch()
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite,globalStyle.flex]}>
         
         <Header title={user.firstName + ' ' + user.lastName}></Header>
-       
+        
+        <Pressable onPress={()=>dispatch(updateFirstName({firstName: 'nafis'}))}>
+          <Text style={{color:'black'}}>press me to change first name</Text>
+        </Pressable>
 
     </SafeAreaView>
   )
