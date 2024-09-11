@@ -25,7 +25,9 @@ const Home = () => {
         <ScrollView showsVerticalScrollIndicator={false}>
         <View style={style.header}>
             <Text style={[{color:'black'}, style.headerIntroText]}>Hellow, </Text>
-            <Header title={user.firstName + ' ' + user.lastName[0]} />
+            <View>
+             <Header title={user.firstName + ' ' + user.lastName[0]}></Header>
+            </View>
         </View>
         </ScrollView>
 
