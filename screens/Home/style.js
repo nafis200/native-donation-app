@@ -6,7 +6,10 @@ const style = StyleSheet.create({
    
     header: {
         marginTop: verticalScale(20),
-        marginHorizontal: horizontalScale(24)
+        marginHorizontal: horizontalScale(24),
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between'
     },
     headerIntroText: {
        fontSize: scaleFontSize(16), 
@@ -16,6 +19,11 @@ const style = StyleSheet.create({
     },
     username:{
         marginTop: verticalScale(5), 
+    },
+    profileimage:{
+        width: horizontalScale(100),
+        height:verticalScale(50),
+
     }
 
 })
