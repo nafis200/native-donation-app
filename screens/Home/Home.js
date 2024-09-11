@@ -13,19 +13,21 @@ import Button from '../../components/Header/button/Button'
 import SIngleDonationItem from '../../components/singledonetionItem/SIngleDonationItem'
 import { horizontalScale } from '../../assets/styles/scalling'
 import { useDispatch, useSelector } from 'react-redux'
-import { updateFirstName } from '../../redux/reducer/User'
+import { resetToInitialState, updateFirstName } from '../../redux/reducer/User'
 
 
 
 const Home = () => {
   const user = useSelector(state => state.user)
   const dispatch = useDispatch()
+  dispatch(resetToInitialState())
+  console.log(user)
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite,globalStyle.flex]}>
         <ScrollView showsVerticalScrollIndicator={false}>
         <View style={style.header}>
             <Text style={[{color:'black'}, style.headerIntroText]}>Hellow, </Text>
-            <View>
+            <View style={style.username}>
              <Header title={user.firstName + ' ' + user.lastName[0]}></Header>
             </View>
         </View>

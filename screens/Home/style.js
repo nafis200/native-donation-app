@@ -14,6 +14,9 @@ const style = StyleSheet.create({
        fontWeight: '400',
        color: '#636776'
     },
+    username:{
+        marginTop: verticalScale(5), 
+    }
 
 })
 
