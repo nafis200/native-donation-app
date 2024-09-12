@@ -1,5 +1,5 @@
 
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image,Pressable } from 'react-native'
 import Badge from '../Badge/Badge';
 import Header from '../Header/Header';
 import React from 'react'
@@ -7,7 +7,9 @@ import style from './style'
 import PropTypes from 'prop-types';
 const SIngleDonationItem = (props) => {
   return (
-    <View>
+    <Pressable onPress={()=>{
+      props.onPress(props.donationItemId)
+    }}>
       <View>
         <View style={style.badge}>
         <Badge  title={props.badgeTitle}></Badge>
@@ -16,15 +18,21 @@ const SIngleDonationItem = (props) => {
       </View>
       <Header title={props.donationTitle} type={3}></Header>
       <Header title={'$'+props.price}></Header>
-    </View>
+    </Pressable>
   )
 }
 
+SIngleDonationItem.defaultProps = {
+   onPress: ()=>{},
+}
+
 SIngleDonationItem.propTypes = {
+    donationItemId: PropTypes.number.isRequired,
     uri: PropTypes.string.isRequired,
     badgeTitle: PropTypes.string.isRequired,
     donationTitle: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired
+    price: PropTypes.number.isRequired,
+    onPress: PropTypes.func
 }
 
 export default SIngleDonationItem

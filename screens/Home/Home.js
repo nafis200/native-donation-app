@@ -129,6 +129,10 @@ const Home = () => {
 
           {
             donationItems.map(value=> <SIngleDonationItem 
+              onPress={selectedDonationId => {
+                console.log(selectedDonationId)
+              }}
+              donationItemId={value.donationItemId}
               uri = {value.image}
               donationTitle={value.name}
               badgeTitle={categories.categories.filter(val=>val.categoryId === categories.selectedCategoryId)[0].name}
