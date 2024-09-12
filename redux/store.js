@@ -11,9 +11,11 @@ import {logger} from 'redux-logger'
 
 import User from './reducer/User'
 import { version } from 'react'
+import Categories from './reducer/Categories'
 
 const root = combineReducers({
-    user: User
+    user: User,
+    categories: Categories
 })
 
 const configuration = {
