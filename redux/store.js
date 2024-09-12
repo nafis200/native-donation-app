@@ -12,10 +12,13 @@ import {logger} from 'redux-logger'
 import User from './reducer/User'
 import { version } from 'react'
 import Categories from './reducer/Categories'
+import Donation from './reducer/Donation'
+
 
 const root = combineReducers({
     user: User,
-    categories: Categories
+    categories: Categories,
+    donation: Donation
 })
 
 const configuration = {
@@ -31,11 +34,12 @@ const stroe = configureStore({
     middleware: getDefaultMiddleware =>{
         return getDefaultMiddleware({
             serializableCheck:false,
-        }).concat(logger)
+        })
     }
 })
 
 export default stroe
 
 export const persistor = persistStore(stroe);
+persistor.purge()
 

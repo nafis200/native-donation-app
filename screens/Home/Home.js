@@ -22,12 +22,15 @@ import { horizontalScale } from "../../assets/styles/scalling";
 import { useDispatch, useSelector } from "react-redux";
 import { resetToInitialState, updateFirstName } from "../../redux/reducer/User";
 import { updateSelectedCategoryId } from "../../redux/reducer/Categories";
+import { resetDonation } from "../../redux/reducer/Donation";
 
 const Home = () => {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   dispatch(resetToInitialState());
+  dispatch(resetDonation())
   const categories = useSelector(state=> state.categories)
+  const donation = useSelector(state=> state.donation)
   
   const [categoryPage,setCategoryPage] = useState(1)
 
@@ -36,6 +39,8 @@ const Home = () => {
  const [isLoadingCategory,setIsLoadingCategory] = useState(false)
 
  const categoryPageSize = 2;
+
+
 
  useEffect(()=>{
    setIsLoadingCategory(true)
