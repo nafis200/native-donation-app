@@ -101,7 +101,6 @@ const Home = () => {
               if(isLoadingCategory){
                 return
               }
-              console.log('user has Reached',categoryPage)
               setIsLoadingCategory(true)
               let newData = pagination(categories.categories,categoryPage,categoryPageSize)
               if(newData.length > 0){
@@ -125,6 +124,19 @@ const Home = () => {
 
             </FlatList>
         </View>
+        {
+          donationItems.length > 0 && <View style={style.donationcontainer}>
+
+          {
+            donationItems.map(value=> <SIngleDonationItem 
+              uri = {value.image}
+              donationTitle={value.name}
+              badgeTitle={categories.categories.filter(val=>val.categoryId === categories.selectedCategoryId)[0].name}
+              key={value.donationItemId} price={value.price} /> )
+          }
+
+        </View>
+        }
       </ScrollView>
     </SafeAreaView>
   );
