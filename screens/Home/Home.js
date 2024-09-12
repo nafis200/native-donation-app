@@ -125,22 +125,25 @@ const Home = () => {
             </FlatList>
         </View>
         {
-          donationItems.length > 0 && <View style={style.donationcontainer}>
-
+          donationItems.length > 0 &&( <View style={style.donationcontainer}>
           {
-            donationItems.map(value=> <SIngleDonationItem 
+            donationItems.map(value=> (
+              <View  key={value.donationItemId} style={style.singleDonationItem}>
+              <SIngleDonationItem 
               onPress={selectedDonationId => {
-                console.log(selectedDonationId)
+                
               }}
               donationItemId={value.donationItemId}
               uri = {value.image}
               donationTitle={value.name}
               badgeTitle={categories.categories.filter(val=>val.categoryId === categories.selectedCategoryId)[0].name}
-              key={value.donationItemId} price={value.price} /> )
+              price={value.price} />
+              </View>
+            ))
           }
 
         </View>
-        }
+        )}
       </ScrollView>
     </SafeAreaView>
   );

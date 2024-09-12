@@ -16,7 +16,7 @@ const SIngleDonationItem = (props) => {
         </View>
         <Image style={[style.image,{height:150, width:150,backgroundColor:'gray'}]} source={{uri: props.uri}} />
       </View>
-      <Header title={props.donationTitle} type={3}></Header>
+      <Header title={props.donationTitle} type={3} color={'#0A043c'} numberOfLines={1} ></Header>
       <Header title={'$'+props.price}></Header>
     </Pressable>
   )
