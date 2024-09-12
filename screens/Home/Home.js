@@ -7,7 +7,7 @@ import {
   Image,
   FlatList,
 } from "react-native";
-import React from "react";
+import React,{useEffect, useState} from "react";
 import style from "./style";
 import globalStyle from "../../assets/styles/globalStyle";
 import Header from "../../components/Header/Header";
@@ -28,7 +28,32 @@ const Home = () => {
   const dispatch = useDispatch();
   dispatch(resetToInitialState());
   const categories = useSelector(state=> state.categories)
-  console.log(categories)
+  
+  const [categoryPage,setCategoryPage] = useState(1)
+
+ const [categoryList,setCategoryList] = useState([])
+
+ const [isLoadingCategory,setIsLoadingCategory] = useState(false)
+
+ const categoryPageSize = 2;
+
+ useEffect(()=>{
+   setIsLoadingCategory(true)
+   setCategoryList(pagination(categories.categories,categoryPage,categoryPageSize))
+   setCategoryPage(prev => prev + 1)
+   setIsLoadingCategory(false)
+ },[])
+
+ const pagination = (items,pageNumber,pageSize)=>{
+    const startIndex = (pageNumber - 1) * pageSize
+    const endIndex = startIndex + pageSize
+    if(startIndex >= items.length){
+        return []
+    }
+    return items.slice(startIndex,endIndex)
+ }
+
+
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -55,9 +80,23 @@ const Home = () => {
         </Pressable>
         <View style={style.categories}>
             <FlatList 
+            onEndReachedThreshold={0.5}
+            onEndReached={()=>{
+              if(isLoadingCategory){
+                return
+              }
+              console.log('user has Reached',categoryPage)
+              setIsLoadingCategory(true)
+              let newData = pagination(categories.categories,categoryPage,categoryPageSize)
+              if(newData.length > 0){
+                 setCategoryList(prevState => [...prevState,...newData])
+                 setCategoryPage(prevState => prevState + 1)
+              }
+              setIsLoadingCategory(false)
+            }}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
-            data={categories.categories} renderItem={({item})=>
+            data={categoryList} renderItem={({item})=>
                <View style={style.categoryItem}
                 key={item.categoryId}
                >

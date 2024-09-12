@@ -15,6 +15,12 @@ const Tab = (props) => {
     width: horizontalScale(paddingHorizontal * 3 + width)
  }
 
+ 
+
+
+
+
+
   return (
     <Pressable style={[style.tab, props.isInactive && style.inactiveTab,tabWidth]} onPress={()=>props.onPress(props.tabId)}  >
         <Text 
