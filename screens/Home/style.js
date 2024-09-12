@@ -37,6 +37,12 @@ const style = StyleSheet.create({
     hightlightedContainer:{
         marginHorizontal: horizontalScale(24),
         marginTop:scaleFontSize(20)
+    },
+    categories:{
+        marginLeft:horizontalScale(24),
+    },
+    categoryItem:{
+        marginRight: horizontalScale(10)
     }
 
 })

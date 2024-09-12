@@ -5,6 +5,7 @@ import {
   Pressable,
   ScrollView,
   Image,
+  FlatList,
 } from "react-native";
 import React from "react";
 import style from "./style";
@@ -20,6 +21,7 @@ import SIngleDonationItem from "../../components/singledonetionItem/SIngleDonati
 import { horizontalScale } from "../../assets/styles/scalling";
 import { useDispatch, useSelector } from "react-redux";
 import { resetToInitialState, updateFirstName } from "../../redux/reducer/User";
+import { updateSelectedCategoryId } from "../../redux/reducer/Categories";
 
 const Home = () => {
   const user = useSelector((state) => state.user);
@@ -51,6 +53,23 @@ const Home = () => {
         <Pressable style={style.hightlightedContainer}>
            <Image style={style.highlighted} source={require('../../assets/image/127 - highlighted-image.png')} />
         </Pressable>
+        <View style={style.categories}>
+            <FlatList 
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            data={categories.categories} renderItem={({item})=>
+               <View style={style.categoryItem}
+                key={item.categoryId}
+               >
+                <Tab 
+                tabId={item.categoryId}
+                onPress={(value)=>dispatch(updateSelectedCategoryId(value))}
+                title={item.name} isInactive={item.categoryId !== categories.selectedCategoryId}/>
+               </View>
+            }>
+
+            </FlatList>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
