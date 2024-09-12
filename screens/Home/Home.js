@@ -38,7 +38,18 @@ const Home = () => {
 
  const [isLoadingCategory,setIsLoadingCategory] = useState(false)
 
+ const [donationItems,setDonationItems] = useState([])
+
  const categoryPageSize = 2;
+
+
+ useEffect(()=>{
+   
+  const items = donation.items
+  const filteredItems = items.filter((value) => value.categoriesIds.includes(categories.selectedCategoryId));
+  setDonationItems(filteredItems)
+
+ },[categories.selectedCategoryId])
 
 
 
