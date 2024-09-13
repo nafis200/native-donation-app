@@ -130,6 +130,7 @@ const Home = ({navigation}) => {
           donationItems.length > 0 &&( <View style={style.donationcontainer}>
           {
             donationItems.map(value=> (
+              
               <View  key={value.donationItemId} style={style.singleDonationItem}>
               <SIngleDonationItem 
               onPress={selectedDonationId => {
@@ -142,7 +143,7 @@ const Home = ({navigation}) => {
               badgeTitle={categories.categories.filter(val=>val.categoryId === categories.selectedCategoryId)[0].name}
               price={value.price} />
               </View>
-            ))
+             ))
           }
 
         </View>

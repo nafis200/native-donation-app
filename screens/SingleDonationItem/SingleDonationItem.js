@@ -1,15 +1,17 @@
 
 import React from "react";
-import { View,Text,SafeAreaView, ScrollView } from "react-native";
+import { View,Text,SafeAreaView, ScrollView,Image } from "react-native";
 import style from "./style";
 import { useSelector } from "react-redux";
 import Backbutton from "../../components/Backbutton/Backbutton";
+import Badge from "../../components/Badge/Badge";
+import Button from "../../components/Header/button/Button";
 
 
 const items = [
     {
       "name": "Winter Jacket",
-      "description": "A warm and cozy winter jacket perfect for cold weather.",
+      "description": "A warm and cozy winter jacket perfect for cold weather dgdgfgfgfd.",
       "image": "https://example.com/images/winter-jacket.jpg",
       "donationItemId": 2,
       "categoriesIds": [1, 5],
@@ -27,7 +29,16 @@ const SingleDonationItem = ({navigation}) => {
          <Backbutton onPress={()=>{
              navigation.goBack()
          }}></Backbutton>
+        <Image style={style.image}>
+        </Image>
+        <View>
+         <Badge title={items[0].name}></Badge>
+        </View>
+        <Text style={{color:'black'}}>{items[0].description} {items[0].description} {items[0].description} {items[0].description} {items[0].description}</Text>
+        <Button title={"Donate"}></Button>
       </ScrollView>
+      <View>
+      </View>
     </SafeAreaView>
   )
 }
