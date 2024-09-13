@@ -1,4 +1,6 @@
 
+
 export const Routes = {
-    Home: 'Home'
+    Home: 'Home',
+    SingleDonationItem:"SingleDonationItem"
 }

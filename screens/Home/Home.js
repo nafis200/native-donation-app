@@ -22,9 +22,10 @@ import { horizontalScale } from "../../assets/styles/scalling";
 import { useDispatch, useSelector } from "react-redux";
 import { resetToInitialState, updateFirstName } from "../../redux/reducer/User";
 import { updateSelectedCategoryId } from "../../redux/reducer/Categories";
-import { resetDonation } from "../../redux/reducer/Donation";
+import { resetDonation, updateSelectedDonationId } from "../../redux/reducer/Donation";
+import { Routes } from "../../navigation/Routes";
 
-const Home = () => {
+const Home = ({navigation}) => {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   dispatch(resetToInitialState());
@@ -131,7 +132,8 @@ const Home = () => {
               <View  key={value.donationItemId} style={style.singleDonationItem}>
               <SIngleDonationItem 
               onPress={selectedDonationId => {
-                
+                  dispatch(updateSelectedDonationId(selectedDonationId))
+                  navigation.navigate(Routes.SingleDonationItem)
               }}
               donationItemId={value.donationItemId}
               uri = {value.image}
