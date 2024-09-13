@@ -50,7 +50,7 @@ const initialState = {
 }
 
 const Donation = createSlice({
-    name: 'donations',
+    name: 'donation',
     initialState: initialState,
     reducers:{
         resetDonation: ()=>{
@@ -65,4 +65,4 @@ const Donation = createSlice({
 
 
 export const {resetDonation, updateSelectedDonationId} = Donation.actions
-export default Donation.reducer
+export default Donation.reducer  
